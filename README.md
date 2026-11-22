@@ -11,7 +11,11 @@ A Redux Toolkit demo, built with React, that fetches random Chuck Norris jokes b
 
 ## Tech Stack
 
-React, Redux Toolkit, React-Redux, Axios, [Chuck Norris API](https://api.chucknorris.io/)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+![React-Redux](https://img.shields.io/badge/React--Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+[![Chuck Norris API](https://img.shields.io/badge/Chuck_Norris_API-F7DF1E?style=for-the-badge&logo=json&logoColor=black)](https://api.chucknorris.io/)
 
 ## How It Works
 
