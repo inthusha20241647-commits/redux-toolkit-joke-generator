@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Redux Toolkit Joke Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Redux Toolkit demo, built with React, that fetches random Chuck Norris jokes by category using `createAsyncThunk` and Axios.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Fetch a random joke by typing a category (e.g. `dev`, `food`, `movie`)
+- Global state managed with Redux Toolkit
+- Async API handling with `createAsyncThunk` and `extraReducers`
+- UI updates automatically when the store changes
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React, Redux Toolkit, React-Redux, Axios, [Chuck Norris API](https://api.chucknorris.io/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How It Works
 
-### `npm test`
+1. The user types a category and clicks **Get jokes**.
+2. `dispatch(fetchJoke(category))` triggers the async thunk.
+3. The thunk calls the API and returns the joke.
+4. The `fulfilled` case in `extraReducers` saves it to `state.joke`.
+5. `useSelector` picks up the change and React re-renders the joke.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+Input → dispatch → API request → reducer updates store → useSelector → UI
+```
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/inthusha20241647-commits/redux-toolkit-joke-generator.git
+cd redux-toolkit-joke-generator
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app runs at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+Enter a valid category such as `dev`, `food`, `movie`, `science` or `sport`, then click **Get jokes**. An invalid category returns a 404 from the API. Valid categories are listed at `https://api.chucknorris.io/jokes/categories`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Future Improvements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Handle the `rejected` state with an error message
+- Add a loading indicator
+- Replace the text input with a category dropdown
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Credits
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Jokes provided by the [Chuck Norris API](https://api.chucknorris.io/).
